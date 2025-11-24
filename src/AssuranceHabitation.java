@@ -44,7 +44,7 @@ public class AssuranceHabitation extends Assurance{
 
     @Override
     public String getTypeAssurance() {
-        return "Assurance Habitation";
+        return "Habitation";
     }
 
     @Override
