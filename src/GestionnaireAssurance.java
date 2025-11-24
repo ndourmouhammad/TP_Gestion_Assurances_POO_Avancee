@@ -26,4 +26,19 @@ public class GestionnaireAssurance {
         }
         return total;
     }
+
+    public Assurance trouverMoinsChere(Assurance[] assurances) {
+
+        if (assurances == null || assurances.length == 0) {
+            return null;
+        }
+        Assurance moinsChere = assurances[0];
+        for (Assurance a : assurances) {
+            if (a.calculerPrime() < moinsChere.calculerPrime()) {
+                moinsChere = a;
+            }
+        }
+
+        return moinsChere;
+    }
 }
