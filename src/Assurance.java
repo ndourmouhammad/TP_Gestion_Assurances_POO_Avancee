@@ -1,11 +1,14 @@
 public abstract class Assurance {
 
+    // Attributs
     private String numeroContrat;
     private String nomClient;
     private double montantCotisation;
 
+    // Attribut statique
     static int compteurContrats = 0;
 
+    // Constructeur
     public Assurance(String nomClient, double montantCotisation) {
         compteurContrats++;
         this.numeroContrat = String.format("ASS%04d", compteurContrats);
@@ -60,13 +63,14 @@ public abstract class Assurance {
         return compteurContrats;
     }
 
-
+    // Calculer le cout total
     public double calculerCoutTotal(int nbAnnees, double tauxReduction) {
         double coutTotal = calculerPrime() * nbAnnees;
         double reduction = coutTotal * tauxReduction;
         return coutTotal - reduction;
     }
 
+    // Calcul de la prime moyenne
     public static double calculerPrimeMoyenne(Assurance[] assurances) {
         if (assurances == null || assurances.length == 0) {
             return 0;

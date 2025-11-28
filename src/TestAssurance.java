@@ -10,6 +10,7 @@ public class TestAssurance {
         Assurance a5 = new AssuranceVie("Cheikh Ba", 20000, 30, 10000000, "Mariama Ba");
         Assurance a6 = new AssuranceSante("Khady Sow", 10000, "Confort", 2);
 
+        // Tableau polymorphe contenant tous les contrats
         Assurance[] assurances = {a1, a2, a3, a4, a5, a6};
 
         // Création du gestionnaire

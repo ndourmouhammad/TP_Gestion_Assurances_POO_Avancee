@@ -1,15 +1,17 @@
 public class AssuranceSante extends Assurance {
 
+    // Attributs
     private String typeFormule;
     private int nbBeneficiaires;
 
-
+    // Constructeurs
     public AssuranceSante(String nomClient, double montantCotisation, String typeFormule, int nbBeneficiaires) {
         super(nomClient, montantCotisation);
         this.setTypeFormule(typeFormule);
         this.setNbBenificiaires(nbBeneficiaires);
     }
 
+    // Getters et Setters
     public String getTypeFormule() {
         return typeFormule;
     }
@@ -26,6 +28,7 @@ public class AssuranceSante extends Assurance {
         this.nbBeneficiaires = nbBeneficiaires;
     }
 
+    // Redefinie des methodes calculerPrime et getTypeAssurance
     @Override
     public double calculerPrime() {
         double primeBase = getMontantCotisation();

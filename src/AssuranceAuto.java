@@ -1,9 +1,11 @@
 public class AssuranceAuto extends Assurance{
 
+    // Attributs
     private String immatriculation;
     private int puissanceFiscale;
     private int bonusMalus;
 
+    // Constructeur
     public AssuranceAuto(String nomClient, double montantCotisation, String immatriculation, int puissanceFiscale, int bonusMalus) {
         super(nomClient, montantCotisation);
         this.setImmatriculation(immatriculation);
@@ -11,6 +13,7 @@ public class AssuranceAuto extends Assurance{
         this.setBonusMalus(bonusMalus);
     }
 
+    // Getters et Setters
     public String getImmatriculation() {
         return immatriculation;
     }
@@ -35,16 +38,15 @@ public class AssuranceAuto extends Assurance{
         this.bonusMalus = bonusMalus;
     }
 
-    // Redefinie la methode calculerPrime et getTypeAssurance
+    // Redefinie des methodes calculerPrime et getTypeAssurance
     @Override
     public double calculerPrime() {
-        // Prime = cotisationBase × (1 + puissance×0.05) × (bonusMalus/100)
         return getMontantCotisation() * 12 * (1 + puissanceFiscale * 0.05) * (bonusMalus / 100.0);
     }
 
     @Override
     public String getTypeAssurance() {
-        return "Assurance Auto";
+        return "Auto";
     }
 
     @Override

@@ -1,9 +1,11 @@
 public class AssuranceVie extends Assurance{
 
+    // Attributs
     private int ageAssure;
     private double capitalGaranti;
     private String benificiaire;
 
+    // Constructeur
     public AssuranceVie(String nomClient, double montantCotisation, int ageAssure, double capitalGaranti, String benificiaire) {
         super(nomClient, montantCotisation);
         this.setAgeAssure(ageAssure);
@@ -11,6 +13,7 @@ public class AssuranceVie extends Assurance{
         this.setBenificiaire(benificiaire);
     }
 
+    // Getters et Setters
     public int getAgeAssure() {
         return ageAssure;
     }
@@ -35,16 +38,15 @@ public class AssuranceVie extends Assurance{
         this.benificiaire = benificiaire;
     }
 
+    // Redefinie les methodes calculerPrime et getTypeAssurance
     @Override
     public double calculerPrime() {
-//        Formule :
-//        Prime = cotisationBase × (1 + age/100) × (capitalGaranti/100000)
         return getMontantCotisation() * 12 * (1 + getAgeAssure() / 100.0) * (getCapitalGaranti() / 100000.0);
     }
 
     @Override
     public String getTypeAssurance() {
-        return "Assurance Vie";
+        return "Vie";
     }
 
     @Override

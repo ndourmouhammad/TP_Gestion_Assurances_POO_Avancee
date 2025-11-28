@@ -1,9 +1,11 @@
 public class AssuranceHabitation extends Assurance{
 
+    // Attributs
     private String adresse;
     private double superficie;
     private  boolean zoneRisque;
 
+    // Constructeur
     public AssuranceHabitation(String nomClient, double montantCotisation, String adresse, double superficie, boolean zoneRisque) {
         super(nomClient, montantCotisation);
         this.setAdresse(adresse);
@@ -11,6 +13,7 @@ public class AssuranceHabitation extends Assurance{
         this.setZoneRisque(zoneRisque);
     }
 
+    // Getters et Setters
     public String getAdresse() {
         return adresse;
     }
@@ -35,7 +38,7 @@ public class AssuranceHabitation extends Assurance{
         this.zoneRisque = zoneRisque;
     }
 
-    // Redefinie la methode calculerPrime et getTypeAssurance
+    // Redefinie les methodes calculerPrime et getTypeAssurance
     @Override
     public double calculerPrime() {
         double coefficientRisque = zoneRisque ? 1.3 : 1.0;
